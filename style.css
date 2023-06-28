@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100%;
+    background: #0c192c;
+    overflow: hidden;
+}
+/*Começo menu cabeçalho*/
+.top-bar {
+    height: 70px;
+    display: flex;
+    background-color: rgb(9, 94, 163);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo a{
+    font-family: 'Inconsolata', monospace;
+    color: #2dc3ff;
+    font-size: 28px;
+    height: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #ffff;
+}
+
+.links a:hover {
+    color: #ffbb00;
+    transition: 0.2s;
+}
+/*Começo animação bolhas*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    overflow: hidden;
+}
+
+.bolhas {
+    position: absolute;
+    display: flex;
+}
+
+.bolhas span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #ffbb00;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ffbb0044, 0 0 50px #ffbb00, 0 0 100px #ffbb00;
+    animation: animar calc(300s / var(--i)) linear infinite;
+}
+
+.bolhas span:nth-of-type(even) {
+    background: #2dc3ff;
+    box-shadow: 0 0 0 10px #2dc3ff44, 0 0 50px #2dc3ff, 0 0 100px #2dc3ff;
+}
+
+@keyframes animar {
+    0% {
+        transform: translateY(45vh) scale(0);
+    }
+    100% {
+        transform: translateY(-44vh) scale(1);
+    }
+}
+/*Começo borda animada*/
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    background-color: #0079db66;
+    height: 450px;
+    width: 300px;
+    border-radius: 4px;
+    gap: 10px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.conteudo-principal span:first-of-type{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ffbb00);
+    animation: borda-animada-cima 2s linear infinite;
+   
+}
+@keyframes borda-animada-cima {
+    0%{
+        transform: translateX(-100%);
+    } 
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.conteudo-principal span:nth-of-type(2){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #ffbb00);
+    animation: borda-animada-direita 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes borda-animada-direita {
+    0%{
+        transform: translateY(-100%);
+    } 
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+
+.conteudo-principal span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #ffbb00);
+    animation: borda-animada-baixo 2s linear infinite;
+    
+}
+@keyframes borda-animada-baixo {
+    0%{
+        transform: translateX(100%);
+    } 
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+
+.conteudo-principal span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #ffbb00);
+    animation: borda-animada-esquerda 2s linear infinite;
+    animation-delay: 1s;
+    
+}
+@keyframes borda-animada-esquerda{
+    0%{
+        transform: translateY(100%);
+    } 
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+/*Começo edição do conteúdo*/
+.conteudo-principal .emoji{
+    margin-top: 10px;
+    font-size: 25px;
+}
+.conteudo-principal h1{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 800;
+    text-align: center;
+    color: #ffbb00;
+}
+
+.conteudo-principal p{
+    font-family: 'Kanit', sans-serif;
+    color: #ffbb00;
+    font-size: 20px;
+
+}
+
+.conteudo-principal ul li{
+    list-style: none;
+    padding: 20px;
+    
+}
+
+.conteudo-principal a{
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #2dc3ff;
+    text-decoration: none;
+    color: #0c192c;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 50px;
+}
+
+.conteudo-principal a:hover{
+    background: #ffbb00;
+    transition: .5s;
+    color: #0c192c;
+}
